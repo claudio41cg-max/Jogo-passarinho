@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
   <title>Flappy Clone</title>
@@ -134,7 +135,7 @@
         if (currentState === STATE.GET_READY) {
           this.y = 260 + Math.sin(frames * 0.08) * 6;
           this.rotation = 0;
-        } else {
+        } else if (currentState === STATE.PLAYING) {
           this.velocity += this.gravity;
           this.y += this.velocity;
 
@@ -335,6 +336,7 @@
     };
 
     function gameOver() {
+      if (currentState !== STATE.PLAYING) return;
       currentState = STATE.GAME_OVER;
       playSound('hit');
     }
@@ -357,6 +359,8 @@
         bird.flap();
       } else if (currentState === STATE.GAME_OVER) {
         resetGame();
+        currentState = STATE.PLAYING;
+        bird.flap();
       }
     }
 
@@ -372,6 +376,14 @@
       e.preventDefault();
       handleAction();
     });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js').catch((error) => {
+          console.error('Falha ao registrar o service worker:', error);
+        });
+      });
+    }
 
     // Renderização dos Textos e UI
     function drawUI() {
