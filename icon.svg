@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ícone Eco da Caverna">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#4b2f60"/>
+      <stop offset="0.62" stop-color="#21152f"/>
+      <stop offset="1" stop-color="#090711"/>
+    </radialGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#8b62a8"/>
+      <stop offset="1" stop-color="#4a315c"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+  <path d="M0 85 54 35l42 61 47-72 45 74 54-79 48 78 46-61 56 54v-90H0Z" fill="#100b18" opacity=".9"/>
+  <path d="M0 438 58 392l50 42 55-54 49 57 52-75 49 67 48-45 71 54v74H0Z" fill="#100b18"/>
+  <circle cx="256" cy="248" r="151" fill="none" stroke="#73e5ee" stroke-width="12" opacity=".15"/>
+  <circle cx="256" cy="248" r="108" fill="none" stroke="#73e5ee" stroke-width="9" opacity=".25"/>
+  <path d="M220 228c-51-90-126-95-168-49 55 12 69 67 76 118 27-30 55-23 93-9Z" fill="url(#wing)" stroke="#190f24" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M292 228c51-90 126-95 168-49-55 12-69 67-76 118-27-30-55-23-93-9Z" fill="url(#wing)" stroke="#190f24" stroke-width="12" stroke-linejoin="round"/>
+  <ellipse cx="256" cy="270" rx="58" ry="78" fill="#392248" stroke="#190f24" stroke-width="12"/>
+  <path d="m213 226 18-76 27 53 27-53 16 77Z" fill="#58366c" stroke="#190f24" stroke-width="12" stroke-linejoin="round"/>
+  <g fill="#baf8ff" filter="url(#glow)">
+    <circle cx="237" cy="239" r="9"/>
+    <circle cx="275" cy="239" r="9"/>
+  </g>
+  <path d="M244 278q12 13 24 0" fill="none" stroke="#e3d6ea" stroke-width="7" stroke-linecap="round"/>
+  <path d="m117 349 18-44 19 44-19 28Z" fill="#64dbe4" opacity=".85"/>
+  <path d="m386 119 15-37 16 37-16 25Z" fill="#b778e6" opacity=".8"/>
+</svg>
