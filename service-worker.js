@@ -1,10 +1,9 @@
-const CACHE_NAME = 'jogo-passarinho-v1';
+const CACHE_NAME = 'eco-da-caverna-v2';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.json',
-  './icon-192.png',
-  './icon-512.png'
+  './icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -45,11 +44,7 @@ self.addEventListener('fetch', (event) => {
       .catch(async () => {
         const cached = await caches.match(event.request);
         if (cached) return cached;
-
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
-        }
-
+        if (event.request.mode === 'navigate') return caches.match('./index.html');
         return Response.error();
       })
   );
